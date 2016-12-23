@@ -1,0 +1,157 @@
+body {
+	font: normal 16px 'Nunito Sans', Helvetica, sans-serif;
+}
+
+/*** Header ***/
+
+header {
+	background: transparent url('../assets/front.jpg') no-repeat;
+	padding: 100px 0 50px 0;
+	text-align: center;
+}
+
+header h1 {
+	background: transparent url('../assets/jsconfbr.png') no-repeat 50% 0;
+	padding-top: 80px;
+	font-size: 2.5rem;
+	color: white;
+	font-weight: 400;
+}
+
+header p {
+	text-transform: uppercase;
+	color: white;
+}
+
+/*** Section ***/
+
+main {
+	text-align: center;
+}
+
+main h2 {
+	font-size: 3.25rem;
+	font-weight: 400;
+	padding-bottom: 25px;
+}
+
+main p {
+	margin-bottom: 15px;
+}
+
+section {
+	padding: 50px 0;
+	margin: 0 20px;
+	border-bottom: 1px solid #cecece;
+}
+
+/*** Button ***/
+
+a.button {
+	color: white;
+	font-weight: 700;
+	background-color: green;
+	padding: 7px 12px;
+	text-decoration: none;
+}
+
+a.button:hover {
+	background-color: #00CC99;
+}
+
+/*** Speakers ***/
+
+.speaker {
+	border: 1px solid #cecece;
+	width: 280px;
+	margin: 0 auto;
+	height: 375px;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.speaker h3 {
+	color: green;
+	font-size: 1.5rem;
+	margin-top: 30px;
+}
+
+.speaker-bio {
+	position: absolute;
+	display: none;
+	padding: 15px 10px;
+	box-sizing: border-box;
+	-webkit-transition: all 2s linear;
+	-moz-transition: all 2s linear;
+	-ms-transition: all 2s linear;
+	-o-transition: all 2s linear;
+	transition: all 2s linear;
+}
+
+.speaker-bio h3 {
+	margin-top: 0;
+}
+.speaker-bio p {
+	font-size: 0.8rem;
+	color: white;
+}
+
+.speaker-bio a {
+	color: green;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.speaker-bio a:hover {
+	text-decoration: underline;
+}
+
+.speaker:hover > .speaker-bio {
+	display: inline-block;
+	width: 280px;
+	height: 375px;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8)
+}
+
+/*** Schedule ***/
+table img {
+	width: 80px;
+	display: block;
+}
+td {
+	border-top: 1px solid grey;
+	text-align: left;
+	padding: 10px 5px;
+	font-size: 1.2rem;
+}
+
+td p {
+	margin: 0;
+}
+
+td a {
+	color: green;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+td a:hover {
+	text-decoration: underline;
+}
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+}
+
+.map-responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
