@@ -1,11 +1,11 @@
 body {
-	font: normal 16px 'Nunito Sans', Helvetica, sans-serif;
+	font: normal 16px 'Open Sans', Helvetica, sans-serif;
 }
 
 /*** Header ***/
 
 header {
-	background: transparent url('../assets/front.jpg') no-repeat;
+	background: transparent url('../assets/front.jpg') center no-repeat;
 	padding: 100px 0 50px 0;
 	text-align: center;
 }
@@ -23,16 +23,22 @@ header p {
 	color: white;
 }
 
+@media (min-width: 560px) {
+	header {
+		padding-top: 150px;
+	}
+	header h1 {
+		font-size: 4rem;
+	}
+	header p {
+		font-size: 1.8rem;
+		letter-spacing: 2px;
+	}
+}
 /*** Section ***/
 
 main {
 	text-align: center;
-}
-
-main h2 {
-	font-size: 3.25rem;
-	font-weight: 400;
-	padding-bottom: 25px;
 }
 
 main p {
@@ -45,29 +51,24 @@ section {
 	border-bottom: 1px solid #cecece;
 }
 
-/*** Button ***/
-
-a.button {
-	color: white;
-	font-weight: 700;
-	background-color: green;
-	padding: 7px 12px;
-	text-decoration: none;
+section h2,
+footer h2 {
+	text-align: center;
+	font-weight: 300;
+	padding-bottom: 25px;
+	font-size: 3.25rem;
 }
 
-a.button:hover {
-	background-color: #00CC99;
-}
 
 /*** Speakers ***/
 
 .speaker {
 	border: 1px solid #cecece;
 	width: 280px;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 	height: 375px;
 	position: relative;
-	margin-bottom: 10px;
+	box-sizing: border-box;
 }
 
 .speaker h3 {
@@ -78,14 +79,21 @@ a.button:hover {
 
 .speaker-bio {
 	position: absolute;
-	display: none;
+	opacity: 0;
 	padding: 15px 10px;
 	box-sizing: border-box;
-	-webkit-transition: all 2s linear;
-	-moz-transition: all 2s linear;
-	-ms-transition: all 2s linear;
-	-o-transition: all 2s linear;
-	transition: all 2s linear;
+	width: 280px;
+	height: 375px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .speaker-bio h3 {
@@ -107,12 +115,13 @@ a.button:hover {
 }
 
 .speaker:hover > .speaker-bio {
-	display: inline-block;
-	width: 280px;
-	height: 375px;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.8)
+	opacity: 1;
+}
+
+@media (min-width: 560px){
+	.speaker {
+		display: inline-block;
+	}
 }
 
 /*** Schedule ***/
@@ -120,11 +129,16 @@ table img {
 	width: 80px;
 	display: block;
 }
+
+tr {
+	position: relative;
+}
 td {
 	border-top: 1px solid grey;
 	text-align: left;
 	padding: 10px 5px;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
+	vertical-align: top;
 }
 
 td p {
@@ -141,11 +155,37 @@ td a {
 td a:hover {
 	text-decoration: underline;
 }
+
+.tags li {
+	display: inline-block;
+	list-style: none;
+	font-size: .5rem;
+	background-color: #EEEEEE;
+	border: 1px solid grey;
+	padding: 0 2px;
+	margin: 0 2px 0 0;
+}
+
+@media (min-width: 655px) {
+	td img {
+		float: right;
+		width: 135px;
+		margin-left: 50px;
+	}
+}
+
+/*** Location ***/
+
+#location p {
+	text-align: left;
+}
+
 .map-responsive {
 	overflow: hidden;
 	padding-bottom: 56.25%;
 	position: relative;
 	height: 0;
+	margin-bottom: 50px;
 }
 
 .map-responsive iframe {
@@ -155,3 +195,107 @@ td a:hover {
 	width: 100%;
 	position: absolute;
 }
+
+/*** Call for Papers ***/
+#call-for-papers {
+	text-align: left;
+}
+#call-for-papers h2 {
+	text-align: center;
+}
+
+#call-for-papers a.button + p {
+	margin-top: 15px;
+}
+
+a {
+	color: green;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/*** Sponsors ***/
+
+
+#sponsors {
+	text-align: left;
+}
+#sponsors h2 {
+	text-align: center;
+}
+
+img.support {
+	width: 180px;
+}
+
+/*** Footer ***/
+footer {
+	padding: 50px 0;
+	background: transparent url('../assets/people.jpg') center no-repeat;
+	text-align: left;
+}
+
+footer section{
+	padding: 30px;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	margin: 0;
+	border: 0;
+}
+
+footer h2 {
+	color: white;
+}
+
+/*** Button ***/
+
+a.button {
+	color: white;
+	font-weight: 700;
+	background-color: green;
+	padding: 7px 12px;
+	text-decoration: none;
+}
+
+a.button:hover {
+	background-color: #00CC99;
+}
+
+/*** Navigation ***/
+
+nav {
+	display: none;
+}
+
+@media (min-width: 560px) {
+	nav {
+		display: block;
+		width: 100%;
+		text-align: center;
+		position: fixed;
+		background-color: #fff;
+		text-transform: uppercase;
+		z-index: 1;
+	}
+
+	nav li {
+		display: inline-block;
+		padding: 10px 30px;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: grey;
+		font-size: 0.8rem;
+		font-weight: 400;
+	}
+
+	nav a:hover {
+		text-decoration: underline;
+	}
+}
+
