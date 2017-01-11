@@ -2,6 +2,11 @@ body {
 	font: normal 300 16px 'Open Sans', Helvetica, sans-serif;
 }
 
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
 /*** Header ***/
 
 header {
@@ -48,7 +53,7 @@ main p {
 }
 
 section {
-	padding: 50px 0 70px 0;
+	padding: 70px 0;
 	margin: 0 20px;
 	border-bottom: 1px solid #dfdfdf;
 }
@@ -57,7 +62,7 @@ section h2,
 footer h2 {
 	text-align: center;
 	font-weight: 300;
-	padding-bottom: 25px;
+	padding-bottom: 50px;
 	font-size: 3.25rem;
 }
 
@@ -76,12 +81,18 @@ footer h2 {
 	height: 375px;
 	position: relative;
 	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .speaker h3 {
 	color: green;
 	font-size: 1.5rem;
 	margin-top: 30px;
+}
+
+.speaker p{
+	max-width: 250px;
+	margin: 0 auto;
 }
 
 .speaker-bio {
@@ -138,69 +149,110 @@ footer h2 {
 }
 
 /*** Schedule ***/
+
 table {
 	max-width: 1000px;
 	margin: 0 auto;
+	box-sizing: border-box;
+	border-bottom: 1px solid #EFEFEF;
 }
 
-table img {
-	width: 80px;
-	display: block;
-}
-
-tr {
-	position: relative;
-}
 td {
-	border-top: 1px solid grey;
-	text-align: left;
-	padding: 10px 5px;
+	border-top: 1px solid #EFEFEF;
+	padding: 10px;
 	font-size: 1.5rem;
-	vertical-align: top;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: normal;
 }
 
-td p {
-	margin: 0;
+td.time {
+}
+
+.description {
+	width: 100%;
+}
+
+td img{
+	width: 130px;
+}
+
+
+td.description p {
+	display: inline-block;
+	margin: 0 10px 0 0;
 }
 
 td a {
 	color: green;
 	text-decoration: none;
-	font-size: 1rem;
 	font-weight: 700;
+	font-size: 1rem;
+	display: block;
 }
 
 td a:hover {
 	text-decoration: underline;
 }
 
-.tags li {
+td div.tag {
 	display: inline-block;
 	list-style: none;
 	font-size: .5rem;
 	background-color: #EEEEEE;
 	border: 1px solid grey;
 	padding: 0 2px;
-	margin: 0 2px 0 0;
+	vertical-align: middle;
 }
 
-@media (min-width: 655px) {
-	td img {
-		float: right;
-		width: 135px;
-		margin-left: 50px;
+@media (max-width: 655px) {
+	tr{
+		position: relative;
+		display: block;
+		border-top: 1px solid #EFEFEF;
+	}
+
+	td {
+		display: block;
+		border: 0;
+	}
+	.time {
+		padding: 20px;
+		text-align: right;
+	}
+
+	td.description {
+		width: 95%;
+	}
+	td.image {
+		position: absolute; 
+		top: 0;
+		left: 0;
+	}
+	table img {
+		width: 80px;
 	}
 }
 
 /*** Location ***/
 
+#location {
+	width: 100%;
+	margin: 0;
+}
+
 #location p {
 	text-align: left;
+	line-height: 25px;
+}
+
+#location>p:nth-of-type(2) {
+		padding-bottom: 40px;
 }
 
 .map-responsive {
 	overflow: hidden;
-	padding-bottom: 56.25%;
+	padding-bottom: 500px;
 	position: relative;
 	height: 0;
 	margin-bottom: 50px;
@@ -209,14 +261,30 @@ td a:hover {
 .map-responsive iframe {
 	left: 0;
 	top: 0;
-	height: 100%;
+	height: 500px;
 	width: 100%;
 	position: absolute;
+	border: 0;
+}
+
+.overlay {
+   background:transparent; 
+   position:relative; 
+   width: 100%;
+   height: 500px; /* your iframe height */
+   top: 500px;  /* your iframe height */
+   margin-top:-500px;  /* your iframe height */
+   z-index: 2;
 }
 
 /*** Call for Papers ***/
 #call-for-papers {
 	text-align: left;
+	margin: 0 auto;
+}
+
+#call-for-papers {
+	line-height: 25px;
 }
 #call-for-papers h2 {
 	text-align: center;
@@ -246,19 +314,32 @@ a:hover {
 	text-align: center;
 }
 
+a.gold-sponsor, a.silver-sponsor, a.support {
+	margin-right: 40px;
+}
+
+.silver-sponsor img {
+	width: 240px;
+}
+
 img.support {
 	width: 180px;
 }
 
+#sponsors h6 {
+	font-size: 1.1rem;
+	font-weight: normal;
+}
+
 /*** Footer ***/
 footer {
-	padding: 50px 0;
-	background: transparent url('../assets/people.jpg') center no-repeat;
+	height: 340px;
+	background: transparent url('../assets/people.jpg') 0 -100px/cover no-repeat;
 	text-align: left;
 }
 
 footer section{
-	padding: 30px;
+	padding: 15px 0;
 	background-color: rgba(0,0,0,0.8);
 	color: white;
 	margin: 0;
@@ -267,20 +348,40 @@ footer section{
 
 footer h2 {
 	color: white;
+	padding: 30px 0;
 }
 
+footer h3 {
+	font-size: 1.9rem;
+	text-transform: uppercase;
+}
+@media (max-width: 800px) {
+	footer {
+		background-position: center;
+	}
+}
+@media (max-width: 650px) {
+	footer h2 {
+	font-size: 2rem;
+	}
+
+	footer div.container {
+		padding: 0 10px;
+	}
+}
 /*** Button ***/
 
 a.button {
+	display: inline-block;
 	color: white;
 	font-weight: 700;
-	background-color: green;
+	background-color: #008000;
 	padding: 10px 20px;
 	text-decoration: none;
 }
 
 a.button:hover {
-	background-color: #00CC99;
+	background-color: #006000;
 }
 
 /*** Navigation ***/
